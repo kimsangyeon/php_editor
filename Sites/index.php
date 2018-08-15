@@ -7,7 +7,7 @@
 		<div id="synapEditor" class="container"></div>
 		<?php
 			echo ("<script language=javascript> window.editor = new SynapEditor('synapEditor', {
-				importAPI: `/~kimsangyeon/upload.php`,
+				importAPI: `/~kimsangyeon/import.php`,
 				imageUploadAPI: `/~kimsangyeon/upload.php`,
     			videoUploadAPI: `/~kimsangyeon/upload.php`,
     			fileUploadAPI: `/~kimsangyeon/upload.php`,

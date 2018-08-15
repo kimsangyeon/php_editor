@@ -14,16 +14,17 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
      
     if (strlen($name)) {
         list($txt, $ext) = explode(".", $name);
+        
         if (in_array(strtolower($ext),$valid_formats)) {
             if ($size < ( 3072*3072 )) { // Image size max 1 MB
                 $actual_image_name = time()."-image.".$ext;
                 $tmp = $_FILES['file']['tmp_name'];
-                if (move_uploaded_file($tmp, $server_path."uploadFile/".$actual_image_name)) {
+                if (move_uploaded_file($tmp, $server_path."uploadFile/media/".$actual_image_name)) {
                     $data['success'] = true;
-                    $data['uploadPath']  = "/~kimsangyeon/uploadFile/".$actual_image_name;
+                    $data['uploadPath']  = "/~kimsangyeon/uploadFile/media/".$actual_image_name;
                 } else {
                     $data['success'] = false;
-                    $data['error'] = $server_path."uploadFile/".$actual_image_name;
+                    $data['error'] = $server_path."uploadFile/media/".$actual_image_name;
                 }
                      
             } else {
